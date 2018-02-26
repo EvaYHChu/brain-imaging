@@ -1,0 +1,9 @@
+# download
+https://surfer.nmr.mgh.harvard.edu/fswiki/DownloadAndInstall#Download
+
+# install in FSLVm7_64
+
+# license file: need online registration
+# get "license.txt" and save it in $FREESURFER_HOME
+# FREESURFER_HOME=/usr/local/freesurfer
+
