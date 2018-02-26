@@ -1,0 +1,9 @@
+# download eddy without CUDA patch: 
+https://fsl.fmrib.ox.ac.uk/fsldownloads/patches/eddy-patch-fsl-5.0.11/centos6/eddy_openmp
+
+# ssh
+cd $FSLDIR/..
+sudo tar -zxvf ~/Downloads/fsl-macosx-patch-5.0.2_from_5.0.1.tar.gz
+
+cd ${FSLDIR}/bin
+ln -s eddy_openmp eddy
