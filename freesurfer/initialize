@@ -1,0 +1,7 @@
+# initialize
+export FREESURFER_HOME=/usr/local/freesurfer
+source $FREESURFER_HOME/SetUpFreeSurfer.sh
+
+# "subj_name" organize into /home/fsluser/Doc_XXX_main/subj_name
+export SUBJECTS_DIR=/home/fsluser/Doc_XXX_main
+recon-all -s 'subj_name' -i /files_001.nii -all
