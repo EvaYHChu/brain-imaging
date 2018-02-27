@@ -1,0 +1,16 @@
+## mris_expand
+# Expands a surface (typically ?h.white) outwards while maintaining smoothness and self-intersection constraints.
+# http://nipype.readthedocs.io/en/latest/interfaces/generated/interfaces.freesurfer/utils.html
+
+# goto "surf" dir
+mris_expand -thickness rh.white 0.1 rh.gray01
+mris_expand -thickness rh.white 0.2 rh.gray02
+mris_expand -thickness rh.white 0.3 rh.gray03
+mris_expand -thickness rh.white 0.4 rh.gray04
+mris_expand -thickness rh.white 0.5 rh.gray05
+mris_expand -thickness rh.white 0.6 rh.gray06
+mris_expand -thickness rh.white 0.7 rh.gray07
+mris_expand -thickness rh.white 0.8 rh.gray08
+mris_expand -thickness rh.white 0.9 rh.gray09
+
+
