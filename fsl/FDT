@@ -1,0 +1,13 @@
+# https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FDT/UserGuide
+# http://dbic.dartmouth.edu/wiki/index.php/Diffusion_Tensor_Imaging_Analysis
+# http://www.cabiatl.com/Resources/Course/tutorial/html/dti.html
+
+
+# V1 RGB display in matlab
+fa=load_untouch_nii('dti_FA.nii');
+vi=load_untouch_nii('dti_V1.nii');
+R=vi.img(:,:,:,1).*fa.img/max(fa.img(:));
+G=vi.img(:,:,:,2).*fa.img/max(fa.img(:));
+B=vi.img(:,:,:,3).*fa.img/max(fa.img(:));
+A=cat(4,R,G,B);
+figure;imagesc(abs(squeeze(A(:,:,10,:))))
