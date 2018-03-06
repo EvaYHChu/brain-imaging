@@ -1,0 +1,4 @@
+# gz file untar in matlab
+url = 'http://example.com/example.tar.gz';
+gunzip(url, 'example');
+untar('example/example.tar','example');
