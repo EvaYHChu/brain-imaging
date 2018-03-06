@@ -1,0 +1,7 @@
+# mri_convert: from epi dicom to 4d nii
+mri_convert -it siemens_dicom -ot analyze4d ~/dicom/epi_001.IMA run1.nii.gz
+
+
+#######
+https://surfer.nmr.mgh.harvard.edu/fswiki/mri_convert
+
