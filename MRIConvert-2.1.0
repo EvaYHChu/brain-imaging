@@ -1,0 +1,32 @@
+% generate timing table/ parameters
+% MRIConvert-2.1.0-win32
+step 1: import Dicom and "convert all"
+step 2: timing table/parameters are in XX_info.txt
+        ex.
+        Repetition time (ms): 4460
+        Echo time[1] (ms): 38
+        Flip angle: 90
+        Number of averages: 1
+        Slice thickness (mm): 1
+        Slice spacing (mm): 1.0000000677995
+        Image columns: 1536
+        Image rows: 1536
+        Phase encoding direction: COL
+        Voxel size x (mm): 1
+        Voxel size y (mm): 1
+        Number of volumes: 1
+        Number of slices: 50
+        Number of files: 1
+        Number of frames: 0
+        Slice duration (ms) : 88.7755
+        Orientation: tra
+        PixelBandwidth: 1185
+        Acceleration factor: 3
+        BandwidthPerPixelPhaseEncode: 16.447
+        Echo spacing (ms): 0.95
+        Effective echo spacing (ms): 0.32
+        Total readout time (FSL definition) (ms): 60.48
+        Total readout time (SPM definition) (ms): 60.8
+        Mosaic rows: 192
+        Mosaic columns: 192
+        Acquisition order: Other
