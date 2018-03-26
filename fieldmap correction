@@ -26,7 +26,11 @@ step 2: timing table/parameters are in XX_info.txt
         Echo spacing (ms): 0.95
         Effective echo spacing (ms): 0.32
         Total readout time (FSL definition) (ms): 60.48
-        Total readout time (SPM definition) (ms): 60.8
+        Total readout time (SPM definition) (ms): 60.8 
+                % Total EPI readout time = number of echoes * echo spacing / Acceleration factor. 
         Mosaic rows: 192
         Mosaic columns: 192
         Acquisition order: Other
+step 3: SPM field correction
+        +ve k-space = 1, -ve = -1. phase encode in anterior to posterior (A>P) direction is –ve and vice versa.
+        
