@@ -132,3 +132,4 @@ EXAMPLES:
 
 bbregister --s s1 --mov run2_moco4d.nii.gz --init-spm  --int T1.nii --reg register.dat
 bbregister --s s1 --mov run2_moco4d.nii.gz --init-spm  --reg register.dat
+bbregister --s eva --mov mri/fmri/meanXX.nii --bold --init-fsl --int mri/T1.mgz --reg mri/fmri/register.partial.dat
