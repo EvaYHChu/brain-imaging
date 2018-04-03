@@ -64,3 +64,10 @@ computed volume fractions (see mri_compute_volume_fractions)
 
 //-----
 mri_vol2surf --src mri/fmri/meanurf180308125507STD131221107524367024-0012-00001-000001-01.nii --srcreg mri/fmri/register.partial.dat --hemi rh --surf gray01 --interp nearest --fwhm 0 --surf-fwhm 5 --out output.nii
+
+#https://fcp-indi.github.io/docs/developer/workflows/timeseries.html
+For left hemisphere
+mri_vol2surf --mov structural.nii --reg structural_bbreg_me.dat --interp trilin --projfrac 0.5 --hemi lh --o surface_file.nii.gz 
+
+For right hemisphere        
+mri_vol2surf --mov structural.nii --reg structural_bbreg_me.dat --interp trilin --projfrac 0.5 --hemi rh --o surface_file.nii.gz
