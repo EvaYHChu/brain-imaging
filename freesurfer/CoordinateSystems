@@ -1,0 +1,9 @@
+https://surfer.nmr.mgh.harvard.edu/fswiki/CoordinateSystems
+% volume
+mri = MRIread('file.mgz'); % Can also read mgh, nii, nii.gz, img
+
+The mri structure will have several elements, including a 'vol' where the pixel data will be. The voxel indices of the resulting volume will relate to the FreeSurfer voxel indices in freeview/tkmedit like:
+
+mri.vol(FSrow+1, FScol+1, FSslice+1) = mri(FScol,FSrow,FSslice)
+
+The mri.vox2ras matrix uses FS indices, ie, RAS = mri.vox2ras*[FScol FSrow FSslice 1]'
