@@ -1,2 +1,4 @@
+bbregister --s eva --mov mri/fmri/meanXX.nii --bold --init-fsl --int mri/T1.mgz --reg mri/fmri/register.partial.dat
+
 mri_concat mri/fmri/run1/a*.nii --o cout.mgz
 mri_vol2surf --mov cout.mgz --reg mri/fmri/register.partial.dat --interp trilin --projfrac 0.5 --hemi rh --o surface_file_rh.nii.gz
