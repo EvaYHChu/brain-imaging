@@ -7,3 +7,6 @@ The mri structure will have several elements, including a 'vol' where the pixel 
 mri.vol(FSrow+1, FScol+1, FSslice+1) = mri(FScol,FSrow,FSslice)
 
 The mri.vox2ras matrix uses FS indices, ie, RAS = mri.vox2ras*[FScol FSrow FSslice 1]'
+
+//--------------------------------
+http://www.grahamwideman.com/gw/brain/fs/coords/fscoords.htm
