@@ -60,3 +60,7 @@ computed volume fractions (see mri_compute_volume_fractions)
 
    --interp    interpolation method (<nearest> or trilinear)
    --vg-thresh thrshold : threshold for  'ERROR: LTAconcat(): LTAs 0 and 1 do not match'
+
+
+//-----
+mri_vol2surf --src mri/fmri/run1.nii.gz --srcreg mri/fmri/register.partial.dat --hemi rh --surf surf/gray01 --interp nearest --fwhm 0 --surf-fwhm 5 --out output.mgh
