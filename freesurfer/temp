@@ -2,3 +2,4 @@ bbregister --s eva --mov mri/fmri/meanXX.nii --bold --init-fsl --int mri/T1.mgz 
 
 mri_concat mri/fmri/run1/a*.nii --o cout.mgz
 mri_vol2surf --mov cout.mgz --reg mri/fmri/register.partial.dat --interp trilin --projfrac 0.5 --hemi rh --o surface_file_rh.nii.gz
+mri_surf2surf --reg mri/fmri/register.partial.dat mri/fmri/meanurf180308125507STD131221107524367024-0012-00001-000001-01.nii --hemi lh --sval-xyz white --tval-xyz mri/fmri/meanurf180308125507STD131221107524367024-0012-00001-000001-01.nii --tval ./lh.white.func --s eva
