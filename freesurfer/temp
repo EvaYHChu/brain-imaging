@@ -3,3 +3,5 @@ bbregister --s eva --mov mri/fmri/meanXX.nii --bold --init-fsl --int mri/T1.mgz 
 mri_concat mri/fmri/run1/a*.nii --o cout.mgz
 mri_vol2surf --mov cout.mgz --reg mri/fmri/register.partial.dat --interp trilin --projfrac 0.5 --hemi rh --o surface_file_rh.nii.gz
 mri_surf2surf --reg mri/fmri/register.partial.dat mri/fmri/meanXXX.nii --hemi lh --sval-xyz white --tval-xyz mri/fmri/meanXXX.nii --tval ./lh.white.func --s eva
+
+mri_annotation2label --subject eva --hemi rh --outdir ./labels 
