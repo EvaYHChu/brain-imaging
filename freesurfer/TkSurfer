@@ -1,3 +1,7 @@
 % manual: https://surfer.nmr.mgh.harvard.edu/fswiki/TkSurferGuide
 
 tksurfer subject lh surface_file
+
+-----
+tksurfer eva lh inflated -o /XX/result.mgh -orf /XX/register.partial.dat -tcl //XX/my_script.tcl
+
