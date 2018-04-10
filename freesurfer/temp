@@ -6,3 +6,5 @@ mri_vol2surf --mov cout.mgz --reg mri/fmri/register.partial.dat --interp trilin 
 mri_surf2surf --reg mri/fmri/register.partial.dat mri/fmri/meanXXX.nii --hemi lh --sval-xyz white --tval-xyz mri/fmri/meanXXX.nii --tval ./lh.white.func --s eva
 
 mri_annotation2label --subject eva --hemi rh --outdir ./labels 
+tksurfer eva lh inflated -o /XXX_lhS6.mgh -orf /XXX/epi_reg/register.partial.dat -tcl /XXX/fmri/my_script.tcl
+
