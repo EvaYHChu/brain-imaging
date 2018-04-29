@@ -1,0 +1,1 @@
+mri_label2label --srcsubject fsaverage --srclabel fsaverage_pcc_042718-lh.label --trgsubject eva --trglabel pcc.lh.label --regmethod surface --hemi lh
