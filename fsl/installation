@@ -1,3 +1,7 @@
 # FSLVm7_64 in VMware
 https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation/Windows
 default password: fsl
+
+
+# update
+sudo yum install libquadmath
