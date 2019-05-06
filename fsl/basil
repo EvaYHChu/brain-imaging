@@ -1,3 +1,6 @@
 # This is a ASL toolbox
 # download: https://github.com/ibme-qubic/oxford_asl/releases
 # doc: https://asl-docs.readthedocs.io/en/latest/basil_userguide.html
+
+# enter gui
+asl_gui
