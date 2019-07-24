@@ -5,8 +5,16 @@ default password: fsl
 
 # update
 sudo yum install libquadmath
+sudo yum install libpng12 libmng
+
 
 pip --version
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 sudo python get-pip.py 
 sudo pip install PyPubSub
+
+# upgrade fsl
+# download https://fsl.fmrib.ox.ac.uk/fsldownloads/fslinstaller.py
+python fslinstaller.py
+# Check to see if a directory called $FSLDIR/fslpython exists. If it does, delete it.
+$FSLDIR/etc/fslconf/fslpython_install.sh -f $FSLDIR 
