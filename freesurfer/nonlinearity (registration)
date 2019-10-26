@@ -1,3 +1,5 @@
+# remove scalp
 mri-watershed target.nii target_strip.nii
 
+# 6 DOF regid 
 mri_robust_register --mov need_to_move.nii --dst target.nii --lta v1to2_nii.lta --mapmovhdr need_to_move_hdr.mgz --satit
