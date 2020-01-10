@@ -4,6 +4,11 @@ iface eth0 inet static
 address 192.168.56.2
 netmask 255.255.255.0
 
+# idea mars @ /root/cifs-credentials.txt
+username=mars
+password=mars
+
+
 #/etc/init.d/networking restart
 # ip link show
 
