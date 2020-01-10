@@ -8,6 +8,13 @@ netmask 255.255.255.0
 # ip link show
 
 
-%% @ idea.net 
+%% @ idea.net ----------------------
+
+the script %MIDEA_HOME%\bin\vboxctrl.cmd by replacing its content with:
+cp -p %MIDEA_HOME%\bin\vboxctrl.cmd %MIDEA_HOME%\bin\vboxctrl.cmd.org
+echo @ECHO OFF > %MIDEA_HOME%\bin\vboxctrl.cmd
+echo echo virtual machine is not on this pc... >> %MIDEA_HOME%\bin\vboxctrl.cmd
+echo echo make sure it is started >> %MIDEA_HOME%\bin\vboxctrl.cmd
+
 # marspassed
 # externalmars true -ip 192.168.56.2
