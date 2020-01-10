@@ -6,3 +6,8 @@ netmask 255.255.255.0
 
 #/etc/init.d/networking restart
 # ip link show
+
+
+%% @ idea.net 
+# marspassed
+# externalmars true -ip 192.168.56.2
