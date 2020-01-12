@@ -21,5 +21,5 @@ echo @ECHO OFF > %MIDEA_HOME%\bin\vboxctrl.cmd
 echo echo virtual machine is not on this pc... >> %MIDEA_HOME%\bin\vboxctrl.cmd
 echo echo make sure it is started >> %MIDEA_HOME%\bin\vboxctrl.cmd
 
-# marspassed
+# marspasswd
 # externalmars true -ip 192.168.56.2
