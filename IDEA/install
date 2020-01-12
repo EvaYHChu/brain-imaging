@@ -1,10 +1,10 @@
-# idea mars
+# idea mars @ vi /etc/network/interfaces
 auto eth0
 iface eth0 inet static
 address 192.168.56.2
 netmask 255.255.255.0
 
-# idea mars @ /root/cifs-credentials.txt
+# idea mars @ vi /root/cifs-credentials.txt
 username=mars
 password=mars
 
