@@ -23,3 +23,10 @@ echo echo make sure it is started >> %MIDEA_HOME%\bin\vboxctrl.cmd
 
 # marspasswd
 # externalmars true -ip 192.168.56.2
+
+## shrink VM dvi
+# in VMbox
+sdelete -c -z c:\ 
+# in real
+vmware-vdiskmanager -k C:\my.vmdk
+VBoxManage.exe modifyhd XXX.vdi -compact
