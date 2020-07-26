@@ -8,3 +8,6 @@ Usage: fslmerge <-x/y/z/t/a/tr> <output> <file1 file2 .......> [tr value in seco
 
 
 fslmerge -a run1.nii au*
+
+%% 3D to 4D
+fslmerge -t dwidata vol*
