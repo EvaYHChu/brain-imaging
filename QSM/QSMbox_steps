@@ -4,4 +4,7 @@ fslmerge -t magn_orig s*
 fslmerge -t phase_orig s*
 
 // QSMbox in matlab
+// prepare nii files and dicom/.ima for auto protocols detection or just generate by your own (ptb_XXX.txt).
+// add path: spm12 and QSMbox
+qsmbox
 
