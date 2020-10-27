@@ -1,0 +1,7 @@
+// step1: dicom to nii
+// step2: merge multi echoes
+fslmerge -t magn_orig s*
+fslmerge -t phase_orig s*
+
+// QSMbox in matlab
+
