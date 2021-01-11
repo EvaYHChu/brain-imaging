@@ -2,6 +2,10 @@
 # http://dbic.dartmouth.edu/wiki/index.php/Diffusion_Tensor_Imaging_Analysis
 # http://www.cabiatl.com/Resources/Course/tutorial/html/dti.html
 
+# first use dcm2nii generate bvals bvectors nii.gz
+
+# FSL
+/usr/local/fsl/bin/dtifit --data=diff_data.nii.gz --out=dir_path --mask=mask.nii --bvecs=diff.bvec --bvals=diff.bval
 
 # V1 RGB display in matlab
 fa=load_untouch_nii('dti_FA.nii');
