@@ -4,6 +4,8 @@
 # direct extract gz file and add $PATH
 # work on FSL 6.0.1 above
 
+# manual:https://buildmedia.readthedocs.org/media/pdf/asl-docs/latest/asl-docs.pdf
+
 
 # enter gui
 asl_gui
