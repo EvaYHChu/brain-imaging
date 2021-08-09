@@ -1,0 +1,20 @@
+# https://fsl.fmrib.ox.ac.uk/fslcourse/lectures/practicals/intro3/index.html
+# adjust to even slices
+
+
+# fslroi
+Usage: fslroi <input> <output> <xmin> <xsize> <ymin> <ysize> <zmin> <zsize>
+       fslroi <input> <output> <tmin> <tsize>
+
+       fslroi <input> <output> <xmin> <xsize> <ymin> <ysize> <zmin> <zsize> <tmin> <tsize>
+Note: indexing (in both time and space) starts with 0 not 1! Inputting -1 for a size will set it to the full image extent for that dimension.
+
+ex. fslroi nii_full nii_full_segment  1 
+
+# topup
+topup --imain=b0_PA_AP  --datain=acqparams.txt --config=b02b0.cnf --out=topup_b0_PA_AP  --fout=topup_b0_PA_AP_field --iout=topup_b0_PA_AP_unwarped_images
+
+fslmaths topup_b0_PA_AP_unwarped_images -Tmean mean_topup_unwarp
+bet mean_topup_unwarp nodif_PA_brain -m
+eddy_openmp --imain=diff_data --mask=nodif_PA_brain_mask --acqp=acqparams.txt --index=index.txt --bvecs=bvecs --bvals=bvals --topup=topup_b0_PA_AP --out=eddy_corrected_data
+dtifit --data=data --mask=nodif_brain_mask --bvecs=bvecs --bvals=bvals --out=dti
