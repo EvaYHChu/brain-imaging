@@ -12,9 +12,31 @@ Note: indexing (in both time and space) starts with 0 not 1! Inputting -1 for a 
 ex. fslroi nii_full nii_full_segment  1 
 
 # topup
-topup --imain=b0_PA_AP  --datain=acqparams.txt --config=b02b0.cnf --out=topup_b0_PA_AP  --fout=topup_b0_PA_AP_field --iout=topup_b0_PA_AP_unwarped_images
+topup --imain=PA_AP_b0  --datain=acqparams.txt --config=b02b0.cnf --out=topup_PA_AP_b0  --fout=topup_PA_AP_b0_field_fout --iout=topup_PA_AP_b0_unwarped_images_iout
 
 fslmaths topup_b0_PA_AP_unwarped_images -Tmean mean_topup_unwarp
 bet mean_topup_unwarp nodif_PA_brain -m
 eddy_openmp --imain=diff_data --mask=nodif_PA_brain_mask --acqp=acqparams.txt --index=index.txt --bvecs=bvecs --bvals=bvals --topup=topup_b0_PA_AP --out=eddy_corrected_data
 dtifit --data=data --mask=nodif_brain_mask --bvecs=bvecs --bvals=bvals --out=dti
+
+#----bash example---
+#!/bin/bash
+for id in {8..30}
+do
+
+	subj="sub$id"
+	echo "===> Starting processing of $subj"
+    	cd $subj
+	fslroi  diff_data_orig PA_b0 0 1
+	fslroi  AP_b0 AP_b0_1 0 1
+	fslmerge -t PA_AP_b0_tmp PA_b0 AP_b0_1
+
+	fslroi diff_data_orig diff_data 0 -1 0 -1 1 74
+	fslroi PA_AP_b0_tmp PA_AP_b0 0 -1 0 -1 1 74 
+
+	topup --imain=PA_AP_b0  --datain=acqparams.txt --config=b02b0.cnf --out=topup_PA_AP_b0  --fout=topup_PA_AP_b0_field_fout --iout=topup_PA_AP_b0_unwarped_images_iout
+    	cd ..
+
+
+done
+
