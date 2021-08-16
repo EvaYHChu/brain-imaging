@@ -1,0 +1,4 @@
+# create ROI
+fslmaths MNI152_T1_2mm_brain_mask -roi 50 1 50 1 50 1 0 1 point_mask -odt float
+fslmaths MNI152_T1_2mm_brain_mask -roi 50 50 50 point_mask -odt float
+fslmaths point_mask -kernel sphere 10 -fmean -bin sphere_mask 
