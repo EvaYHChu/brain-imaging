@@ -1,0 +1,6 @@
+# https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FDT/UserGuide
+# prepare a directry with name
+1) data: 4D data.
+2) nodif_brain_mask: mask
+3) bvecs
+4) bvals
