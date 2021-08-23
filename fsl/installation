@@ -18,3 +18,7 @@ sudo pip install PyPubSub
 python fslinstaller.py
 # Check to see if a directory called $FSLDIR/fslpython exists. If it does, delete it.
 $FSLDIR/etc/fslconf/fslpython_install.sh -f $FSLDIR 
+
+
+# course
+https://fsl.fmrib.ox.ac.uk/fslcourse/2019_Beijing/
