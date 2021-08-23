@@ -1,6 +1,7 @@
 # https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FDT/UserGuide
 # http://dbic.dartmouth.edu/wiki/index.php/Diffusion_Tensor_Imaging_Analysis
 # http://www.cabiatl.com/Resources/Course/tutorial/html/dti.html
+# https://web.mit.edu/fsl_v5.0.10/fsl/doc/wiki/FDT(2f)UserGuide.html
 
 # first use dcm2nii generate bvals bvectors nii.gz
 
