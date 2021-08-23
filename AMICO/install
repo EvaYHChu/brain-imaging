@@ -1,0 +1,13 @@
+#  python 2.7
+# conda promt:
+conda create --name python27 python=2.7
+
+conda activate python27
+conda deactivate python27
+
+# install VC c++ 9
+https://github.com/reider-roque/sulley-win-installer/blob/master/VCForPython27.msi
+
+conda install -c conda-forge implicit
+
+# install spams
