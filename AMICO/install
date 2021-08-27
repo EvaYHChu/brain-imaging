@@ -1,4 +1,4 @@
-#  python 2.7
+# python 2.7
 # conda promt:
 conda create --name python27 python=2.7
 
@@ -11,3 +11,21 @@ https://github.com/reider-roque/sulley-win-installer/blob/master/VCForPython27.m
 conda install -c conda-forge implicit
 
 # install spams
+
+# ==========================
+# ubuntu
+# ==========================
+sudo apt install python3-pip
+sudo apt-get install liblapack-dev -y 
+sudo apt-get install libopenblas-base -y 
+sudo apt-get install libopenblas-dev -y
+
+# check: https://pypi.org/project/spams/
+pip install spams
+
+# https://github.com/daducci/AMICO/wiki/Installation
+pip install dmri-amico
+
+sudo apt install spyder3
+pip install -U spyder
+
