@@ -1,0 +1,15 @@
+# https://github.com/daducci/AMICO/wiki/Fitting-the-NODDI-model
+
+import amico
+amico.core.setup()
+ae = amico.Evaluation("sub1", "NODDI")
+amico.util.fsl2scheme("sub1/NODDI/NODDI_protocol.bval", "sub1/NODDI/NODDI_protocol.bvec")
+
+ae.load_data(dwi_filename = "NODDI_DWI.nii.gz", scheme_filename = "NODDI_protocol.scheme", mask_filename = "roi_mask.nii.gz", b0_thr = 0)
+
+
+ae.set_model("NODDI")
+ae.generate_kernels()
+ae.load_kernels()
+ae.fit()
+ae.save_results()
