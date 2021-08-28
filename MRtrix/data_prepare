@@ -1,0 +1,10 @@
+# ref: https://mrtrix.readthedocs.io/en/latest/quantitative_structural_connectivity/ismrm_hcp_tutorial.html
+# Diffusion preprocessed files (preprocess by FSL)
+bvals
+bvecs
+data.nii.gz
+nodif_brain_mask.nii.gz
+
+# Structural preprocessed files (preprocess by freesurfer)
+aparc+aseg.nii.gz
+T1w_acpc_dc_restore_brain.nii.gz
