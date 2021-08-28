@@ -5,6 +5,9 @@ bvecs
 data.nii.gz
 nodif_brain_mask.nii.gz
 
-# Structural preprocessed files (preprocess by freesurfer)
+# Structural preprocessed files (preprocess by freesurfer recon-all)
 aparc+aseg.nii.gz
 T1w_acpc_dc_restore_brain.nii.gz
+
+#tips:
+mri_convert aparc+aseg.mgz aparc+aseg.nii.gz
