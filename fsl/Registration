@@ -1,0 +1,27 @@
+# https://www.fmrib.ox.ac.uk/primers/intro_primer/ExBox18/IntroBox18.html
+
+fnirt --in=struct_brain --aff=my_affine_transf.mat --cout=my_nonlinear_transf --ref=MNI152_T1_2mm_brain --config=T1_2_MNI152_2mm --iout=struct_MNI
+flirt -in invol -ref refvol -cost bbr -out outvol -omat invol2refvol.mat  
+
+flirt -in Diffusion.bedpostX/nodif_brain.nii.gz -ref /t1.nii.gz  -omat str2diff.mat
+fnirt --in=struct_brain --aff=my_affine_transf.mat --cout=my_nonlinear_transf --ref=MNI152_T1_2mm_brain --config=T1_2_MNI152_2mm --iout=struct_MNI -omat str2standard.mat
+
+flirt -in T2_brain.nii.gz -ref T1_brain.nii.gz -dof 6 -cost corratio -omat T2toT1_cr.mat -out T2toT1_cr.nii.gz
+flirt -in T2.nii.gz -ref T1_brain.nii.gz -dof 6 -cost bbr -wmseg T1_wmseg.nii.gz -schedule $FSLDIR/etc/flirtsch/bbr.sch -init T2toT1_cr.mat -omat T2toT1_bbr.mat -out T2toT1_bbr.nii.gz
+
+flirt -in T1_brain.nii.gz -ref $FSLDIR/data/standard/MNI152_T1_2mm_brain.nii.gz -dof 12 -out T1toMNIlin.nii.gz -omat T1toMNIlin.mat
+fnirt --in=T1.nii.gz --aff=T1toMNIlin.mat --config=T1_2_MNI152_2mm.cnf --iout=T1toMNInonlin.nii.gz --cout=T1toMNI_coef.nii.gz --fout=T1toMNI_warp.nii.gz
+
+applywarp -i T1.nii.gz -r $FSLDIR/data/standard/MNI152_T1_1mm.nii.gz -w T1toMNI_warp.nii.gz --interp=spline -o T1toMNInonlin_1mm.nii.gz
+
+#-----
+bet T1.nii T1_brain -m -R -f 0.25
+flirt -in bedpostx.bedpostX/nodif_brain.nii.gz -ref T1_brain.nii.gz  -omat diff2str.mat
+
+flirt -in T1_brain.nii.gz -ref $FSLDIR/data/standard/MNI152_T1_2mm_brain.nii.gz  -cost bbr -dof 12 -out T1toMNIlin.nii.gz -omat str2standard.mat
+fnirt --in=T1.nii --aff=str2standard.mat --config=T1_2_MNI152_2mm.cnf --iout=T1toMNInonlin.nii.gz --cout=T1toMNI_coef.nii.gz --fout=T1toMNI_warp.nii.gz
+
+applywarp -i T1.nii.gz -r $FSLDIR/data/standard/MNI152_T1_1mm.nii.gz -w T1toMNI_warp.nii.gz --interp=spline -o T1toMNInonlin_1mm.nii.gz
+
+convert_xfm -omat diff2str.mat -inverse str2diff.mat
+convert_xfm -omat str2standard.mat -inverse standard2str.mat
