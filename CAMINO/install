@@ -1,0 +1,17 @@
+# http://camino.cs.ucl.ac.uk/index.php?n=Main.Installation
+# Installing Java 
+sudo apt-get install default-jre
+sudo apt-get install default-jdk
+nano ~/.bashrc
+  # camino java
+  export PATH=/usr/lib/jvm/default-java/bin:$PATH
+
+
+# download and build
+git clone git://git.code.sf.net/p/camino/code camino
+cd camino
+make
+
+# environment setting
+export MANPATH=/home/user/camino/man:$MANPATH
+export PATH=/home/user/camino/bin:$PATH
