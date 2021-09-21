@@ -1,0 +1,9 @@
+FSLDIR=/usr/local/fsl
+. ${FSLDIR}/etc/fslconf/fsl.sh
+PATH=${FSLDIR}/bin:${PATH}
+export FSLDIR PATH
+
+
+export FSLOUTPUTTYPE=NIFTI
+fslsplit dwi_denoise.nii dwi_denoise_3D_ -t
+
