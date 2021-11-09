@@ -1,0 +1,20 @@
+# install cmake
+sudo apt  install cmake-curses-gui
+
+
+
+git clone git://github.com/stnava/ANTs.git
+
+
+
+mkdir ~/antsbin
+cd ~/antsbin/
+
+ccmake ../Downloads/ANTs
+make -j 4
+cd ANTS-build
+sudo make install
+
+#in ~/.bashrc
+export ANTSPATH=/opt/ANTs/bin
+export PATH=${ANTSPATH}:$PATH
