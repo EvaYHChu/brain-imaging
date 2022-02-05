@@ -1,0 +1,6 @@
+web:https://open.win.ox.ac.uk/pages/fsl/fsl_mrs/
+
+# install:
+git clone --recurse-submodules https://git.fmrib.ox.ac.uk/fsl/fsl_mrs.git
+cd fsl_mrs
+pip install 
